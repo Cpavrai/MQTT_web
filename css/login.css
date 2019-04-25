@@ -52,6 +52,7 @@ body input:focus {
 
 body button {
 	background-color: rgb(74, 105, 189);
+	margin-top: 1.5em;
 	cursor: pointer;
 	border-bottom: 3px solid black;
 }
