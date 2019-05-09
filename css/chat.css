@@ -91,6 +91,10 @@ body {
 	#chat div p {
 		margin: 0;
 		padding-top: 1.5em;
+		width: 75%;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 	}
 
 	#tatanou {
@@ -127,6 +131,7 @@ body {
 
 	#discuss #discussion {
 		height: 80%;
+		padding: 2em 0;
 		overflow: auto;
 		box-sizing: border-box;
 	}
@@ -142,6 +147,7 @@ body {
 		border: none;
 		box-shadow: inset 0px 2px 9px 0px rgba(0, 0, 0, 0.27);
 		font-size: 1.2em;
+		border-bottom-right-radius: 5px;
 	}
 
 	/* Messages dans la discussion */
@@ -153,25 +159,30 @@ body {
 		}
 
 
-		#discussion .not-me,
-		#discussion .me {
+		#discussion p.not-me,
+		#discussion p.me {
 			position: relative;
 			width: fit-content;
 			padding: 9px;
-			margin: 0.5em 3%;
+			margin: 0.1em 3%;
 			border-radius: 5px;
 			max-width: 70%;
 		}
 
-		#discussion .not-me {
+		#discussion p.not-me {
 			float: left;
 			background-color: white;
 			border: 1px solid rgba(0, 0, 0, 0.27);
 			color: grey;
 		}
 
-		#discussion .me {
+		#discussion p.me {
 			background: linear-gradient(to bottom right, rgba(74, 105, 189,1.0) 50%, rgba(106, 137, 204, 1.0));
 			float: right;
 			color: white;
+		}
+
+		div.me + div.not-me p,
+		div.not-me + div.me p {
+			margin-top: 2em !important;
 		}
